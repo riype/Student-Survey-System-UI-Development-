@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+/*Rishal Kuriakose Iype G00885728*/
+
+body{
+    background-color: lightgrey;
+    font-family: serif, sans-serif; 
+}
+h1{
+    color: blue;
+    text-align: center
+}
+.logo{
+    background-image: url(../GMU.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    float: right;
+    height: 100px;
+    width: 200px;
+}
+.shadow{
+    text-shadow: -4px 4px 6px dimgrey;
+    font-size: 400%;
+
+}
+h4{
+    text-align: center;
+}
+.footnote{
+    clear: both;
+    position: relative;
+    color: midnightblue;
+    font-weight: bold;
+
+}
+.error{
+  
+    color: red;
+    
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Department of Computer Science - Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery-ui.js"></script>
+        <script type="text/javascript" src="cssurvey.js"></script>
+        <link rel="stylesheet" type="text/css" href="csdept.css"/>
+        <link rel="stylesheet" type="text/css" href="jquery-ui.css">
+        
+        <script type="text/javascript">
+        $(function () {
+        	$(document).tooltip();
+        });
+        </script>
+    </head>
+    <body>
+<div id = "cookiedisplay" ></div>
+        <h1 class="shadow">Survey Form</h1>
+        <h4>Let us know how your campus visit's been by filling out this Survey form.</h4>
+        <form id="myform" method="post" autocomplete="on" action="" onsubmit="surveyformValidation()">
+
+            <table border="1" cellspacing="5px" cellpadding="5%" align="center">
+                <tr>
+                    <td  align="right">
+                        <label><b>User Name:</b></label></td>
+                    <td><input id="name" type="text" size="25" maxlength="30" placeholder="eg: John" required autofocus/><br>
+                        <label id='nerror' class="error"></label></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Street-address-1:</b></label></td>
+                    <td><input id="addressline" type="text" size="50" maxlength="60" /><br>
+                        <label id='aerror' class="error"></label></td>
+                </tr>
+
+                <tr>
+                    <td  align="right">
+                        <label><b>City:</b></label></td>
+                    <td><span id="city"></span></td>
+
+                </tr>
+
+                <tr>
+                    <td  align="right">
+                        <label><b>State:</b></label></td>
+                    <td><span id="state"></span></td>
+
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Zip Code:</b></label></td>
+                    <td><input id="zip" type="text" size="5" maxlength="5" pattern="[0-9]{5}" onblur="getZip()" />#####<br>
+                        <label id="ziperror" class="error"></label></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Telephone Number:</b></label></td>
+                    <td><input id="telno" type=tel placeholder="(###) ###-####" pattern="\(\d{3}\) +\d{3}-\d{4}" required />(###) ###-####</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>E-mail:</b></label></td>
+                    <td><input id="email" type="email" placeholder="name@domain.com" required />(name@domain.com)<br>
+                        <label id="emailerror" class="error"></label></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>URL:</b></label></td>
+                    <td><input id="url" type="url" placeholder="http://www.domainname.com" />(http://www.domainname.com)</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Date:</b></label></td>
+                    <td><input id="date" type="date" required /></td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label><b>What did you like most<br>about the campus?</b></label><br>
+                    </td>
+                    <td><input name="campuslike" type="checkbox" value="students" />Students
+                        <input name="campuslike" type="checkbox" value="location" />Location
+                        <input name="campuslike" type="checkbox" value="campus" />Campus
+                        <input name="campuslike" type="checkbox" value="atmosphere" />Atmosphere
+                        <input name="campuslike" type="checkbox" value="dormrooms" />Dorm Rooms
+                        <input name="campuslike" type="checkbox" value="sports" />Sports<br>
+                        <label id="chkerror" class="error"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label for="txtList"><b>High-School Graduation Month:</b></label></td>
+                    <td><input type="text" id="txtList" placeholder="Select a month" list="months" required >
+                        <datalist id="months">
+                            <option value="January"></option>
+                            <option value="February"></option>
+                            <option value="March"></option>
+                            <option value="April"></option>
+                            <option value="May"></option>
+                            <option value="June"></option>
+                            <option value="July"></option>
+                            <option value="August"></option>
+                            <option value="September"></option>
+                            <option value="October"></option>
+                            <option value="November"></option>
+                            <option value="December"></option>
+                        </datalist>
+                        <label><b>Year:</b></label>
+                        <input id="gyear" type="text" placeholder="yyyy" required />
+                    </td>
+                </tr> 
+                <tr>
+                    <td  align="right">
+                        <label><b>What got you interested<br>in this university?</b></label><br>
+                    </td>
+                    <td>
+                        <input name="interest" type="radio" value="friends"  />Friends
+                        <input name="interest" type="radio" value="television" />Television
+                        <input name="interest" type="radio" value="internet" />Internet
+                        <input name="interest" type="radio" value="other" />Other<br>
+                        <label id="radioerror" class="error"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label><b>Will you recommend this<br>university to your friends?</b></label></td>
+
+                    <td>
+                        <select name="recommend">
+                            <option selected="selected">Very Likely</option>
+                            <option>Likely</option>
+                            <option>Unlikely</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Data:</b></label><br>
+                    </td>
+                    <td><input id="inputVal" type="text" size="60" placeholder="Enter atleast 10 ',' separated numbers" onblur="avgMax()" /><br>
+                        <label id="dataerror" class="error"></label></td>
+
+                </tr>
+
+                <tr>
+                    <td  align="right">
+                        <label><b>Average:</b></label></td>
+                    <td><span id="avg"></span></td>
+
+                </tr>
+
+                <tr>
+                    <td  align="right">
+                        <label><b>Maximum:</b></label></td>
+                    <td><span id="max"></span></td>
+
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Comments:</b></label></td>
+                    <td><textarea name="comments" rows="4" cols="70" placeholder="Enter comments here."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                <p>
+                    <input type="submit" value="Submit" align="center" onclick="return surveyformValidation()"/>
+                    <input type="reset" value="Reset"  onclick="resetForm()"/>     
+                </p>
+
+                </th> 
+
+                </tr>
+            </table> 
+            <div style="top: 400px; right: 10px; position: fixed;">
+                <a href="https://www.gmu.edu/" target="_blank">
+                    <img src="GMU.jpg" title="Please visit http://www.gmu.edu for more information" />
+                </a>
+            </div>
+        </form>
+
+        <div class="footnote">Rishal Kuriakose Iype</div>
+
+    </body>
+</html>

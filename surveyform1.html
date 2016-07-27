@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Department of Computer Science - Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="csdept.css"/>
+    </head>
+    <body>
+        <h1 class="shadow">Survey Form</h1>
+        <h4>Let us know how your campus visit's been by filling out this Survey form.</h4>
+        <form method="post" autocomplete="on" action="">
+            <table border="1" cellspacing="5px" cellpadding="5%" align="center">
+                <tr>
+                    <td  align="right">
+                        <label><b>User Name:</b></label></td>
+                    <td><input name="name" type="text" size="25" maxlength="30" placeholder="eg: John Doe" required autofocus/></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Street-address-1:</b></label></td>
+                    <td><input name="address-line-1" type="text" size="50" maxlength="60" /></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Street-address-2:</b></label></td>
+                    <td><input name="address-line-2" type="text" size="50" maxlength="60" /></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>City:</b></label></td>
+                    <td><input name="city" type="text" size="15" maxlength="20" /></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>State:</b></label></td>
+                    <td><input name="state" type="text" size="15" maxlength="20" /></td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Zip Code:</b></label></td>
+                    <td><input name="zip" type="text" size="5" maxlength="5" pattern="[0-9]{5}" />#####</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Telephone Number:</b></label></td>
+                    <td><input name="telno" type=tel placeholder="(###) ###-####" pattern="\(\d{3}\) +\d{3}-\d{4}" required />(###) ###-####</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>E-mail:</b></label></td>
+                    <td><input name="email" type="email" placeholder="name@domain.com" required />(name@domain.com)</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>URL:</b></label></td>
+                    <td><input name="url" type="url" placeholder="http://www.domainname.com" />(http://www.domainname.com)</td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Date:</b></label></td>
+                    <td><input name="date" type="date" required /></td>
+                </tr>
+
+                <tr>
+                    <td align="right">
+                        <label><b>What did you like most<br>about the campus?</b></label></td>
+                    <td><input name="campuslike" type="checkbox" value="students" />Students
+                        <input name="campuslike" type="checkbox" value="location" />Location
+                        <input name="campuslike" type="checkbox" value="campus" />Campus
+                        <input name="campuslike" type="checkbox" value="atmosphere" />Atmosphere
+                        <input name="campuslike" type="checkbox" value="dormrooms" />Dorm Rooms
+                        <input name="campuslike" type="checkbox" value="sports" />Sports
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label for="txtList"><b>High-School Graduation Month:</b></label></td>
+                    <td><input type="text" id="txtList" placeholder="Select a month" list="months" required >
+                        <datalist id="months">
+                            <option value="January"></option>
+                            <option value="February"></option>
+                            <option value="March"></option>
+                            <option value="April"></option>
+                            <option value="May"></option>
+                            <option value="June"></option>
+                            <option value="July"></option>
+                            <option value="August"></option>
+                            <option value="September"></option>
+                            <option value="October"></option>
+                            <option value="November"></option>
+                            <option value="December"></option>
+                        </datalist>
+                        <label><b>Year:</b></label>
+                        <input name="gyear" type="text" placeholder="yyyy" required />
+                    </td>
+                </tr> 
+                <tr>
+                    <td  align="right">
+                        <label><b>What got you interested<br>in this university?</b></label></td>
+                    <td>
+                        <input name="interest" type="radio" value="friends" checked="checked" />Friends
+                        <input name="interest" type="radio" value="television" />Television
+                        <input name="interest" type="radio" value="internet" />Internet
+                        <input name="interest" type="radio" value="other" />Other
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label><b>Will you recommend this<br>university to your friends?</b></label></td>
+
+                    <td>
+                        <select name="recommend">
+                            <option selected="selected">Very Likely</option>
+                            <option>Likely</option>
+                            <option>Unlikely</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td  align="right">
+                        <label><b>Comments:</b></label></td>
+                    <td><textarea name="comments" rows="4" cols="70" placeholder="Enter comments here."></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                <p>
+                    <input type="submit" value="Submit" align="center"/>
+                    <input type="reset" value="Clear" />     
+                </p>
+
+                </th> 
+
+                </tr>
+            </table> 
+
+			<div style="top: 600px; right: 5px; position: fixed;">
+            <a href="https://www.gmu.edu/" target="_blank">
+                <img class="logo" src="GMU.jpg" alt="George Mason University Logo"/>
+            </a>
+			</div>
+        </form>
+        
+        <div class="footnote">Rishal Kuriakose Iype</div>
+        
+    </body>
+</html>
